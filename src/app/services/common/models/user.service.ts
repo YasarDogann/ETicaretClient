@@ -5,7 +5,7 @@ import { firstValueFrom, observable, Observable } from 'rxjs';
 import { Token } from '../../../contracts/token/token';
 import { TokenResponse } from '../../../contracts/token/tokenResponse';
 import { Create_User } from '../../../contracts/users/create_user';
-import { List_User } from '../../../contracts/users/List_user';
+import { List_User } from '../../../contracts/users/list_user';
 import { User } from '../../../entities/user';
 import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../ui/custom-toastr.service';
 import { HttpClientService } from '../http-client.service';
