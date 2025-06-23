@@ -15,10 +15,9 @@ import {MatCardModule} from '@angular/material/card';
   ],
   imports: [
     CommonModule,
-    MatDialogModule,
-    MatButtonModule,
-    FileUploadModule,
-    MatCardModule
+    MatDialogModule, MatButtonModule, MatCardModule,
+    FileUploadModule
+    
   ]
 })
 export class DialogModule { }

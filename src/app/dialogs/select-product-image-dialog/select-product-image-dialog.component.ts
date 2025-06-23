@@ -46,21 +46,29 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
     this.images = await this.productService.readImages(this.data as string, () => this.spinner.hide(SpinnerType.BallAtom));
   }
 
-  async deleteImage(imageId: string, evet: any){
+  async deleteImage(imageId: string, event: any) {
+
     this.dialogService.openDialog({
       componentType: DeleteDialogComponent,
       data: DeleteState.Yes,
-      afterClosed:async () => {
-        this.spinner.show(SpinnerType.BallAtom);
+      afterClosed: async () => {
+        this.spinner.show(SpinnerType.BallAtom)
         await this.productService.deleteImage(this.data as string, imageId, () => {
-        this.spinner.hide(SpinnerType.BallAtom);
-        var card = $(event.srcElement).parent().parent();
-        card.fadeOut(500);
+          this.spinner.hide(SpinnerType.BallAtom);
+          var card = $(event.srcElement).parent().parent();
+          // debugger;
+          card.fadeOut(500);
         });
       }
     })
+  }
 
-    
+  showCase(imageId: string) {
+    this.spinner.show(SpinnerType.BallAtom);
+
+    this.productService.changeShowcaseImage(imageId, this.data as string, () => {
+      this.spinner.hide(SpinnerType.BallAtom);
+    });
   }
 }
 

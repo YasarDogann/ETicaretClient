@@ -28,12 +28,7 @@ import { DialogModule } from '@angular/cdk/dialog';
     RouterModule.forChild([
       {path: "", component: ProductsComponent}
     ]),
-    MatSidenavModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
+    MatSidenavModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatTableModule, MatPaginatorModule,
     DialogModule,
     FileUploadModule
   ]

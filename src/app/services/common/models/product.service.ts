@@ -12,6 +12,9 @@ import { List_Product_Image } from '../../../contracts/list_product_image';
 
 // VERİ EKLEME VE ÇEKME İŞLEMLERİNİ BU SERVİS ÜZERİNDEN YÖNETTİM
 export class ProductService {
+  changeShowcaseImage(imageId: string, arg1: string, arg2: () => void) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private httpClientService: HttpClientService) { }
 
@@ -65,13 +68,12 @@ export class ProductService {
   }
 
   // resim silme
-  async deleteImage(id: string, imageId: string, successCallBack?: () => void){
+  async deleteImage(id: string, imageId: string, successCallBack?: () => void) {
     const deleteObservable = this.httpClientService.delete({
       action: "deleteproductimage",
       controller: "products",
-      queryString:  `imageId=${imageId}`
-    }, id);
-
+      queryString: `imageId=${imageId}`
+    }, id)
     await firstValueFrom(deleteObservable);
     successCallBack();
   }

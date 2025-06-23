@@ -44,32 +44,32 @@ export class DeleteDirective {
       componentType: DeleteDialogComponent,
       data: DeleteState.Yes,
       afterClosed: async () => {
-      this.spinner.show(SpinnerType.BallAtom);
-      const td: HTMLTableCellElement = this.element.nativeElement;
-      this.httpClientService.delete({
-        controller: this.controller
-      }, this.id).subscribe(data => {
-        $(td.parentElement).animate({
-          opacity: 0,
-          left: "+=50",
-          height: "toogle"
-        }, 700, () => {
-          this.callback.emit();
-          this.alertifyService.message("Ürün başarıyla silinmiştir.", {
-            dismissOthers: true,
-            messageType: MessageType.Success,
-            position: Position.TopRight
-          })
-        });
-      }, (errorResponse: HttpErrorResponse) => {
-        this.spinner.hide(SpinnerType.BallAtom);
-        this.alertifyService.message("Ürün silerken hata oluştu.", {
+        this.spinner.show(SpinnerType.BallAtom);
+        const td: HTMLTableCellElement = this.element.nativeElement;
+        this.httpClientService.delete({
+          controller: this.controller
+        }, this.id).subscribe(data => {
+          $(td.parentElement).animate({
+            opacity: 0,
+            left: "+=50",
+            height: "toogle"
+          }, 700, () => {
+            this.callback.emit();
+            this.alertifyService.message("Ürün başarıyla silinmiştir.", {
+              dismissOthers: true,
+              messageType: MessageType.Success,
+              position: Position.TopRight
+            })
+          });
+        }, (errorResponse: HttpErrorResponse) => {
+          this.spinner.hide(SpinnerType.BallAtom);
+          this.alertifyService.message("Ürün silerken hata oluştu.", {
             dismissOthers: true,
             messageType: MessageType.Error,
             position: Position.TopRight
-        });
-      });     
-    }
+          });
+        });     
+      }
     });
   }
 
