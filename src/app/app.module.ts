@@ -12,6 +12,7 @@ import { BaseComponent } from './base/base.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDirective } from './directives/admin/delete.directive';
 import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 
@@ -27,7 +28,13 @@ import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upl
     UiModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem("accessToken"),
+        allowedDomains: ["localhost:7131"] // Burayı ayağa kaldırınca değiştiricem
+      }
+    })
   ],
   providers: [
     {provide: "baseUrl", useValue: "https://localhost:7180/api",multi: true}
