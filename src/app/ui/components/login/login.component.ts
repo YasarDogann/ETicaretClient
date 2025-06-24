@@ -31,7 +31,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
           break;
         case "FACEBOOK":
           await userAuthService.facebookLogin(user, () => {
-            this.authService.identityCheck();
+            this.authService.identityCheck(); 
             this.hideSpinner(SpinnerType.BallAtom);
           })
           break;
