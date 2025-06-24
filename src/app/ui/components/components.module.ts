@@ -20,7 +20,7 @@ import { LoginModule } from './login/login.module';
     HomeModule,
     BasketModule,
     RegisterModule,
-    LoginModule
+    // LoginModule
   ]
 })
 export class ComponentsModule { }
