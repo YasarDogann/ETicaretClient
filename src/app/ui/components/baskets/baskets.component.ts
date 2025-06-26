@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { async } from 'rxjs';
-import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
+import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { List_Basket_Item } from '../../../contracts/basket/list_basket_item';
 import { Update_Basket_Item } from '../../../contracts/basket/update_basket_item';
 import { Create_Order } from '../../../contracts/order/create_order';
