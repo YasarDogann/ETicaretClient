@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
-
+import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { HubUrls } from '../../../constants/hub-urls';
 import { ReceiveFunctions } from '../../../constants/receive-functions';
