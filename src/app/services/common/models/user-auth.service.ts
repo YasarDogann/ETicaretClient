@@ -1,6 +1,5 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
 import { Injectable } from '@angular/core';
-
 import { firstValueFrom, Observable } from 'rxjs';
 import { TokenResponse } from '../../../contracts/token/tokenResponse';
 import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../ui/custom-toastr.service';

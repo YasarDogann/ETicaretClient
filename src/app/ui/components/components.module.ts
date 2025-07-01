@@ -7,10 +7,12 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterModule } from './register/register.module';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 // import { PasswordResetComponent } from './password-reset/password-reset.component';
 // import { UpdatePasswordComponent } from './update-password/update-password.component';
-// import { PasswordResetModule } from './password-reset/password-reset.module';
-// import { UpdatePasswordModule } from './update-password/update-password.module';
+import { PasswordResetModule } from './password-reset/password-reset.module';
+import { UpdatePasswordModule } from './update-password/update-password.module';
 
 
 @NgModule({
@@ -23,9 +25,8 @@ import { LoginModule } from './login/login.module';
     HomeModule,
     BasketsModule,
     RegisterModule,
-    //LoginModule,
-    // PasswordResetModule,
-    // UpdatePasswordModule
+    PasswordResetModule,
+    UpdatePasswordModule
   ],
   exports: [
     BasketsModule
