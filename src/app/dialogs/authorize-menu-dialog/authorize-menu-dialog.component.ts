@@ -21,9 +21,11 @@ export class AuthorizeMenuDialogComponent extends BaseDialog<AuthorizeMenuDialog
     private spinner: NgxSpinnerService) {
     super(dialogRef)
   }
+  
   roles: { datas: List_Role[], totalCount: number };
   assignedRoles: Array<string>;
   listRoles: { name: string, selected: boolean }[];
+
   async ngOnInit() {
     this.assignedRoles = await this.authorizationEndpointService.getRolesToEndpoint(this.data.code, this.data.menuName);
 
@@ -38,7 +40,9 @@ export class AuthorizeMenuDialogComponent extends BaseDialog<AuthorizeMenuDialog
   }
 
   assignRoles(rolesComponent: MatSelectionList) {
-    const roles: string[] = rolesComponent.selectedOptions.selected.map(o => o._text.nativeElement.innerText)
+    // const roles: string[] = rolesComponent.selectedOptions.selected.map(o => o._text.nativeElement.innerText)
+    const roles: string[] = rolesComponent.selectedOptions.selected.map(o => o.value);
+
     this.spinner.show(SpinnerType.BallAtom);
     this.authorizationEndpointService.assignRoleEndpoint(roles, this.data.code, this.data.menuName,
       () => {

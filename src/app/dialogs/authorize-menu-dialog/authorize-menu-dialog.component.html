@@ -4,13 +4,17 @@
 </div>
 
 
-<mat-selection-list #rolesComponent>
+<!-- <mat-selection-list #rolesComponent>
   <mat-list-option *ngFor="let role of listRoles" selected="{{role.selected}}">
     {{role.name}}
   </mat-list-option>
+</mat-selection-list> -->
+
+<mat-selection-list #rolesComponent>
+  <mat-list-option *ngFor="let role of listRoles" [value]="role.name" [selected]="role.selected">
+  {{ role.name }}
+  </mat-list-option>
 </mat-selection-list>
-
-
 
 <div></div>
 <div mat-dialog-actions>
