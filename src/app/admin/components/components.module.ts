@@ -4,10 +4,11 @@ import { ProductsModule } from './products/products.module';
 import { OrderModule } from './order/order.module';
 import { CustomerModule } from './customer/customer.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { DeleteDirective } from '../../directives/admin/delete.directive';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AuthorizeMenuModule } from './authorize-menu/authorize-menu.module';
 import { RoleModule } from './role/role.module';
 import { UserModule } from './user/user.module';
-
 
 
 
@@ -22,7 +23,7 @@ import { UserModule } from './user/user.module';
     DashboardModule,
     AuthorizeMenuModule,
     RoleModule,
-    UserModule 
+    UserModule
   ]
 })
 export class ComponentsModule { }

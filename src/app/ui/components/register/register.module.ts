@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
-
 @NgModule({
   declarations: [
     RegisterComponent
@@ -14,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: "", component: RegisterComponent}
+      { path: "", component: RegisterComponent }
     ]),
     ReactiveFormsModule
   ]
